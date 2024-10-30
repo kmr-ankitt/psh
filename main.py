@@ -5,6 +5,9 @@ def psh_cd(path):
         os.chdir(os.path.abspath(path))
     except Exception:
         print("cd: no such file or directory: {}".format(path))
+def psh_help():
+    print("""psh: shell implementation in Python.
+          Supports all basic shell commands.""")
 def main():
     
     """ Loop runs infinite times until user types 'exit' """
