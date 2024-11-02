@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """psh: a simple shell written in Python"""
 
 import os
