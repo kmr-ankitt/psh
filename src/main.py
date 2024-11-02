@@ -25,9 +25,11 @@ def execute_command(command):
                 os.dup2(fdin, 0)
                 os.close(fdin)
 
-                """If it is the last command then restore stdout to original value, 
+                """
+                If it is the last command then restore stdout to original value, 
                 else create a piping between fdin and fdout to take input from previous
-                command and give output to next command""" 
+                command and give output to next command
+                """ 
                 
                 if cmd == command.split("|")[-1]:
                     fdout = os.dup(s_out)
