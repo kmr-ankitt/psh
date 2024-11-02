@@ -85,3 +85,5 @@ def main():
         else:
             execute_command(inp)
 
+if '__main__' == __name__:
+    main()
