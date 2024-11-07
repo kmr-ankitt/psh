@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-
 """psh: a simple shell written in Python"""
-
 import os
 import subprocess
-
+from termcolor import colored
 
 """Function handles all commands except 'cd' and 'exit' commands of psh shell"""
 def execute_command(command):
@@ -79,7 +77,10 @@ def main():
     
     """ Loop runs infinite times until user types 'exit' """
     while True:
-        inp = input("> ")
+        curDir = os.getcwd().replace("/", ">")
+        displayDir = curDir.split(">")[-1] if ">" in curDir else "~"
+        inp = input(colored(f"{displayDir}", "red") + colored("> ", "green"))
+
         if inp == "exit":
             break
         elif inp[:3] == "cd ":
