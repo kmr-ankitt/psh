@@ -19,7 +19,9 @@ def execute_command(command):
             """Iterating over all piped commands"""
             for cmd in command.split("|"):
 
-                """If first command, fdin is stdin, else it is the readable end of the pipe"""
+                """If first command, fdin is stdin, 
+                else it is the readable end of the pipe"""
+
                 os.dup2(fdin, 0)
                 os.close(fdin)
 
